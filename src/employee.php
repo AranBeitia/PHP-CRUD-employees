@@ -1,5 +1,5 @@
 <!-- TODO Employee view -->
-<?php include './module/head.php' ?>
+<?php include '../assets/header.html' ?>
 <body>
 	<h1>employee</h1>
 	<a href="./dashboard.php">Go back</a>
