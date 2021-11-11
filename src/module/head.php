@@ -5,6 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Employees</title>
-	<link rel="stylesheet" href="./assets/styles.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" href="./css/login.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css?v=<?php echo time(); ?>" type="text/css" media="all">
 </head>

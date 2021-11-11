@@ -1,4 +1,7 @@
 <!-- TODO Application entry point. Login view -->
+<?php require_once("./src/library/sessionHelper.php"); 
+    $php = checkSession();
+?> 
 <?php include './src/module/head.php' ?>
 <body>
 	<?php require_once("./assets/header.html"); ?>
