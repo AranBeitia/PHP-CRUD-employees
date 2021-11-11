@@ -1,4 +1,7 @@
 <!-- TODO Application entry point. Login view -->
+<?php require_once("./src/library/sessionHelper.php"); 
+    $php = checkSession();
+?> 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -28,6 +31,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"
 		></script>
 		<script src="./js/index.js" defer></script>
+		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" media="all">
 	</head>
 </html>
 <body>
@@ -37,10 +41,10 @@
             <h3 class="mb-4">Please Log in</h3>
             <form action="./src/library/loginController.php" method="POST" class="form">
                 <div>
-                    <input name="email" type="email" id="email" placeholder="Email"></input>
+                    <input name="email" type="email" id="email" placeholder="Email" required></input>
                 </div>
                 <div>
-                    <input name="pass" type="password" id="password" placeholder="Password">
+                    <input name="pass" type="password" id="password" placeholder="Password" required></input>
                 </div>
                 <div>
                     <button type="submit" class="btn-3d">Submit</button>

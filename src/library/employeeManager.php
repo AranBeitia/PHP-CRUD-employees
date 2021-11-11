@@ -1,14 +1,14 @@
 <?php
-/**
- * EMPLOYEE FUNCTIONS LIBRARY
- *
- * @author: Jose Manuel Orts
- * @date: 11/06/2020
- */
+// /**
+//  * EMPLOYEE FUNCTIONS LIBRARY
+//  *
+//  * @author: Jose Manuel Orts
+//  * @date: 11/06/2020
+//  */
 
-function addEmployee(array $newEmployee) {
-// TODO implement it
-}
+// function addEmployee(array $newEmployee) {
+// // TODO implement it
+// }
 
 
 function deleteEmployee(string $id) {
@@ -21,10 +21,10 @@ function deleteEmployee(string $id) {
 }
 
 
-function updateEmployee(array $updateEmployee)
-{
-// TODO implement it
-}
+// function updateEmployee(array $updateEmployee)
+// {
+// // TODO implement it
+// }
 
 
 function getEmployee(string $id) {
@@ -32,16 +32,16 @@ function getEmployee(string $id) {
 }
 
 
-function removeAvatar($id)
-{
-// TODO implement it
-}
+// function removeAvatar($id)
+// {
+// // TODO implement it
+// }
 
 
-function getQueryStringParameters(): array
-{
-// TODO implement it
-}
+// function getQueryStringParameters(): array
+// {
+// // TODO implement it
+// }
 
 function getNextIdentifier(array $employeesCollection): int
 {
