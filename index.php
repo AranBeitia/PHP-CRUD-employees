@@ -7,10 +7,10 @@
             <h3 class="mb-4">Please Log in</h3>
             <form action="./src/library/loginController.php" method="POST" class="form">
                 <div>
-                    <input name="email" type="email" id="email" placeholder="Email"></input>
+                    <input name="email" type="email" id="email" placeholder="Email" required></input>
                 </div>
                 <div>
-                    <input name="pass" type="password" id="password" placeholder="Password">
+                    <input name="pass" type="password" id="password" placeholder="Password" required></input>
                 </div>
                 <div>
                     <button type="submit" class="btn-3d">Submit</button>
