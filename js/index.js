@@ -1,14 +1,13 @@
 $('#jsGrid').jsGrid({
 	width: '100%',
 	filtering: true,
-	editing: false,
+	editing: true,
 	inserting: true,
 	sorting: true,
 	paging: true,
 	autoload: true,
 	pageSize: 15,
 	pageButtonCount: 5,
-	deleteConfirm: 'Do you really want to delete the client?',
 	controller: {
 		loadData: function (filter) {
 			return $.ajax({
@@ -25,20 +24,29 @@ $('#jsGrid').jsGrid({
 				type: 'POST',
 				url: '../src/library/employeeController.php',
 				data: item,
+				success: function (response) {
+					console.log('POST: ', response)
+				},
 			})
 		},
 		updateItem: function (item) {
 			return $.ajax({
 				type: 'PUT',
 				url: '../src/library/employeeController.php',
-				item,
+				data: item,
+				success: function (response) {
+					console.log('PUT: ', response)
+				},
 			})
 		},
 		deleteItem: function (item) {
 			return $.ajax({
 				type: 'DELETE',
 				url: '../src/library/employeeController.php',
-				data: item,
+				data: { itemId: item.id },
+				success: function (response) {
+					console.log('DELETE: ', response)
+				},
 			})
 		},
 	},
