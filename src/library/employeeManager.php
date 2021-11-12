@@ -7,10 +7,26 @@
 //  */
 
 function addEmployee(array $newEmployee) {
+	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"));
+	$newArray = array(
+		"id" => strval($_SESSION["newId"]),
+		"name" => $newEmployee["name"],
+		"email" => $newEmployee["email"],
+		"age" => $newEmployee["age"],
+		"streetAddress" => $newEmployee["streetAddress"],
+		"city" => $newEmployee["city"],
+		"state" => $newEmployee["state"],
+		"postalCode" => $newEmployee["postalCode"],
+		"phoneNumber" => $newEmployee["phoneNumber"],
+	);
+
+	array_push($employeeArray, $newArray);
+
+	file_put_contents("../../resources/employees.json", json_encode($employeeArray));
 // TODO implement it
 }
 
-function deleteEmployee($id) {
+function deleteEmployee(string $id) {
 	$employeesArray = json_decode(file_get_contents("../../resources/employees.json"), true);
 	$newArray = array();
 
@@ -24,10 +40,11 @@ function deleteEmployee($id) {
 	file_put_contents("../../resources/employees.json", json_encode($newArray));
 }
 
-
 function updateEmployee(array $updateEmployee) {
+	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"));
 // TODO implement it
-	echo file_get_contents('../../resources/employees.json');
+	echo $employeeArray;
+	return $updateEmployee;
 }
 
 
@@ -53,5 +70,5 @@ function getNextIdentifier(array $employeesCollection): int
 }
 
 function getEmployeesData() {
-	echo file_get_contents('../../resources/employees.json');
+	echo file_get_contents("../../resources/employees.json");
 }

@@ -6,7 +6,7 @@
 	<a href="../index.php">go to index</a>
 	<a href="./employee.php">Go to employee</a>
 	<p>Hola: <?php 
-	session_start(); 
+	session_start();
 	echo $_SESSION["name"];
 ?> </p>
 	<div id="jsGrid"></div>
