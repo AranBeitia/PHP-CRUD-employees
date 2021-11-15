@@ -6,25 +6,29 @@
 //  * @date: 11/06/2020
 //  */
 
-// function addEmployee(array $newEmployee) {
-// // TODO implement it
-// }
+function addEmployee(array $newEmployee) {
+// TODO implement it
+}
 
+function deleteEmployee($id) {
+	$employeesArray = json_decode(file_get_contents("../../resources/employees.json"), true);
+	$newArray = array();
 
-function deleteEmployee(string $id) {
-	$jsonUrl = '../../resources/employees.json';
-	$employeesArray = json_decode(file_get_contents($jsonUrl));
-
-	foreach($employeesArray as $employee) {
-		echo $employeesArray;
+	foreach($employeesArray as $index => $employee) {
+		if($employee["id"] === $id) {
+			unset($employeesArray[$index]);
+		} else {
+			array_push($newArray, $employee);
+		}
 	}
+	file_put_contents("../../resources/employees.json", json_encode($newArray));
 }
 
 
-// function updateEmployee(array $updateEmployee)
-// {
-// // TODO implement it
-// }
+function updateEmployee(array $updateEmployee) {
+// TODO implement it
+	echo file_get_contents('../../resources/employees.json');
+}
 
 
 function getEmployee(string $id) {
@@ -32,16 +36,16 @@ function getEmployee(string $id) {
 }
 
 
-// function removeAvatar($id)
-// {
-// // TODO implement it
-// }
+function removeAvatar($id)
+{
+// TODO implement it
+}
 
 
-// function getQueryStringParameters(): array
-// {
-// // TODO implement it
-// }
+function getQueryStringParameters(): array
+{
+// TODO implement it
+}
 
 function getNextIdentifier(array $employeesCollection): int
 {
@@ -49,7 +53,5 @@ function getNextIdentifier(array $employeesCollection): int
 }
 
 function getEmployeesData() {
-	$jsonUrl = file_get_contents('../../resources/employees.json');
-	$employeesArray = json_decode($jsonUrl, true);
-	echo json_encode($employeesArray);
+	echo file_get_contents('../../resources/employees.json');
 }
