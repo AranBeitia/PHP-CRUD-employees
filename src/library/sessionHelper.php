@@ -6,6 +6,9 @@
     if(isset($_SESSION["email"])){
         header("Location:./src/dashboard.php");
     }
+    else if(isset($_GET["logout"])){
+        header("refresh:5, index.php");
+    }
     else if (isset($_SESSION["wrongLogin"])){
         $errorMsg =  $_SESSION["wrongLogin"];
         unset($_SESSION);
