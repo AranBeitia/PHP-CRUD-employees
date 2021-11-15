@@ -16,5 +16,6 @@
 	echo $_SESSION["name"];
 ?> </p>
 	<div id="jsGrid"></div>
+	<?php require_once("../assets/footer.html"); ?>
 </body>
 </html>

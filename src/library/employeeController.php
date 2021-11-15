@@ -4,9 +4,8 @@
 	switch ($_SERVER['REQUEST_METHOD']) {
 		case 'GET': // loadData
 			header("Content-Type: application/json");
-			getEmployeesData();
+			echo getEmployeesData();
 			break;
-
 		case 'POST': // insertItem
 			header("Content-Type: application/json");
 			getEmployeesData();

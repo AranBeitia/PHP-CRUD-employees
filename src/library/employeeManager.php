@@ -31,8 +31,8 @@ function updateEmployee(array $updateEmployee) {
 }
 
 
-function getEmployee(string $id) {
-// TODO implement it
+function getEmployee($id) {
+	getEmployeesData($id);
 }
 
 
@@ -53,5 +53,7 @@ function getNextIdentifier(array $employeesCollection): int
 }
 
 function getEmployeesData() {
-	echo file_get_contents('../../resources/employees.json');
+	$dataEmployees = file_get_contents('../../resources/employees.json');
+
+	return $dataEmployees;
 }

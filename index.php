@@ -32,7 +32,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"
 		></script>
 		<script src="./js/index.js" defer></script>
-		<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" media="all">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	</head>
 </html>
 <body>
@@ -41,16 +41,17 @@
        <div>
             <h3 class="mb-4">Please Log in</h3>
             <form action="./src/library/loginController.php" method="POST" class="form">
-                <div>
-                    <input name="email" type="email" id="email" placeholder="Email" required></input>
-                </div>
-                <div>
-                    <input name="pass" type="password" id="password" placeholder="Password" required></input>
-                </div>
+				<div class="form-floating mb-3">
+  					<input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" required>
+  					<label for="email">Email address</label>
+				</div>
+                <div class="form-floating">
+  					<input name="pass" type="password" class="form-control" id="password" placeholder="Password" required>
+  					<label for="password">Password</label>
+				</div>
                 <div>
                     <button type="submit" class="btn-3d">Submit</button>
                 </div>
-                
             </form>
         </div>
 		<div>
@@ -60,8 +61,6 @@
 		}	?>	
 		</div>
     </main>
-    <div>
-    </div>
     <?php require_once("./assets/footer.html"); ?>
 </body>
 </html>

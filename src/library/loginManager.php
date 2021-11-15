@@ -9,7 +9,7 @@
 
             $_SESSION["email"] = $email;
             $_SESSION["name"] = $userData["users"][0]["name"];
-            $_SESSION["expTime"] = 10;
+            $_SESSION["expTime"] = 600;
             $_SESSION["time"] = time();
             
             header("Location:../dashboard.php");

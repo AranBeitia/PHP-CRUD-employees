@@ -8,16 +8,18 @@ $('#jsGrid').jsGrid({
 	autoload: true,
 	pageSize: 15,
 	pageButtonCount: 5,
+	rowClick: function (args) {
+		selectedItem = args.item;
+  		window.location = "./employee.php";
+	},
 	controller: {
 		loadData: function (filter) {
 			return $.ajax({
 				type: 'GET',
 				url: '../src/library/employeeController.php',
 				data: filter,
-				success: function (response) {
-					console.log('GET: ', response)
-				},
-			})
+				dataType: "json",
+				})
 		},
 		insertItem: function (item) {
 			return $.ajax({
