@@ -7,7 +7,9 @@
 	<a href="./employee.php">Go to employee</a>
 	<p>Hola: <?php 
 	session_start();
-	echo $_SESSION["name"];
+	if(isset($_SESSION["name"])) {
+		echo $_SESSION["name"];
+	}
 ?> </p>
 	<div id="jsGrid"></div>
 

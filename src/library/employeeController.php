@@ -8,8 +8,9 @@
 			break;
 
 		case 'POST': // insertItem
-			if(isset($_POST['item'])) {
-				addEmployee($_POST['item']);
+			if(isset($_POST['newEmployee'])) {
+				print_r($_POST['newEmployee']);
+				addEmployee($_POST['newEmployee']);
 			}
 			break;
 

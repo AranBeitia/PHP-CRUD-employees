@@ -7,9 +7,17 @@
 //  */
 
 function addEmployee(array $newEmployee) {
-	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"));
+	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
+	$newArray = array();
+	$id = Array();
+
+	foreach($employeeArray as $employee) {
+		$id[] = $employee["id"];
+	}
+echo $id;
+	$newId = max($id) + 1;
 	$newArray = array(
-		"id" => strval($_SESSION["newId"]),
+		"id" => $newEmployee[$newId],
 		"name" => $newEmployee["name"],
 		"email" => $newEmployee["email"],
 		"age" => $newEmployee["age"],
@@ -42,9 +50,13 @@ function deleteEmployee(string $id) {
 
 function updateEmployee(array $updateEmployee) {
 	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"));
+	 $id = 0;
+	foreach($employeeArray as $employee) {
+		$id ++;
+	}
 // TODO implement it
-	echo $employeeArray;
-	return $updateEmployee;
+	echo print_r($employeeArray);
+
 }
 
 
@@ -66,6 +78,7 @@ function getQueryStringParameters(): array
 
 function getNextIdentifier(array $employeesCollection): int
 {
+
 // TODO implement it
 }
 

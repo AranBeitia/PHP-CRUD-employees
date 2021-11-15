@@ -23,7 +23,7 @@ $('#jsGrid').jsGrid({
 			return $.ajax({
 				type: 'POST',
 				url: '../src/library/employeeController.php',
-				data: item,
+				data: { newEmployee: item },
 				success: function (response) {
 					console.log('POST: ', response)
 				},
@@ -33,7 +33,7 @@ $('#jsGrid').jsGrid({
 			return $.ajax({
 				type: 'PUT',
 				url: '../src/library/employeeController.php',
-				data: item,
+				data: { item },
 				success: function (response) {
 					console.log('PUT: ', response)
 				},
@@ -52,12 +52,12 @@ $('#jsGrid').jsGrid({
 	},
 
 	fields: [
-		{ name: 'id', type: 'text', width: 50, validate: 'required' },
-		{ name: 'name', type: 'text', width: 100, title: 'Name' },
-		{ name: 'email', type: 'text', width: 150, title: 'Email' },
+		{ name: 'id', type: 'text', width: 30 },
+		{ name: 'name', type: 'text', width: 80, title: 'Name' },
+		{ name: 'email', type: 'text', width: 100, title: 'Email' },
 		{ name: 'age', type: 'number', width: 50, title: 'Age' },
 		{ name: 'streetAddress', type: 'text', width: 50, title: 'Street No.' },
-		{ name: 'city', type: 'text', width: 150, title: 'City' },
+		{ name: 'city', type: 'text', width: 100, title: 'City' },
 		{ name: 'state', type: 'text', width: 50, title: 'Phone State' },
 		{
 			name: 'postalCode',
