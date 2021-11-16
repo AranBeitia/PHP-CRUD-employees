@@ -23,7 +23,6 @@
 	}
 	
 	?>
-	<script src="../js/employee.js" defer></script>
 <body>
 	<h1>employee</h1>
 	<a href="./dashboard.php">Go back</a>
