@@ -31,9 +31,17 @@ function updateEmployee(array $updateEmployee) {
 }
 
 
-function getEmployee($id) {
-	getEmployeesData($id);
-}
+// function getEmployee($id) {
+// 	$json = json_decode(getEmployeesData(), true);
+	
+// 	foreach($json as $employee) {
+// 		 if($employee["id"] == $id) {
+			
+// 			header("Location: ../employee.php?id=$id");
+// 		 }
+		
+// 	}
+// }
 
 
 function removeAvatar($id)

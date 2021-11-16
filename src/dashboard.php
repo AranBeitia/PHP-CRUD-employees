@@ -13,7 +13,7 @@
 	</div>
 	<a href="./employee.php">Go to employee</a>
 	<p>Hola: <?php 
-	echo $_SESSION["name"];
+	echo $_SESSION["adminName"];
 ?> </p>
 	<div id="jsGrid"></div>
 	<?php require_once("../assets/footer.html"); ?>

@@ -23,4 +23,9 @@
 			}
 			break;
 	}
+	if($_GET["id"]){
+		$idEmployee = $_GET['id'];
+  		return getEmployee($idEmployee);
+	}
+
 ?>

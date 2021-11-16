@@ -7,8 +7,8 @@
         if($email == $userData["users"][0]["email"] && password_verify($pass, $userData["users"][0]["password"])){
             session_start();
 
-            $_SESSION["email"] = $email;
-            $_SESSION["name"] = $userData["users"][0]["name"];
+            $_SESSION["adminEmail"] = $email;
+            $_SESSION["adminName"] = $userData["users"][0]["name"];
             $_SESSION["expTime"] = 600;
             $_SESSION["time"] = time();
             

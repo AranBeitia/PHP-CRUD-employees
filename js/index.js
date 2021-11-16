@@ -1,16 +1,16 @@
 $('#jsGrid').jsGrid({
 	width: '100%',
 	filtering: true,
-	editing: true,
+	editing: false,
 	inserting: true,
 	sorting: true,
 	paging: true,
 	autoload: true,
 	pageSize: 15,
 	pageButtonCount: 5,
-	rowClick: function (args) {
+	rowClick: function(args){
 		selectedItem = args.item;
-  		window.location = "./employee.php";
+		window.location = "../src/employee.php?id=" + selectedItem.id;
 	},
 	controller: {
 		loadData: function (filter) {

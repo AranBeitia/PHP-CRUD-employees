@@ -42,11 +42,11 @@
             <h3 class="mb-4">Please Log in</h3>
             <form action="./src/library/loginController.php" method="POST" class="form">
 				<div class="form-floating mb-3">
-  					<input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" required>
+  					<input type="email" name="adminEmail" class="form-control" id="email" placeholder="name@example.com" required>
   					<label for="email">Email address</label>
 				</div>
                 <div class="form-floating">
-  					<input name="pass" type="password" class="form-control" id="password" placeholder="Password" required>
+  					<input name="adminPass" type="password" class="form-control" id="password" placeholder="Password" required>
   					<label for="password">Password</label>
 				</div>
                 <div>

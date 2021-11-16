@@ -4,9 +4,9 @@
     if(isset($_GET["logout"])){
         logOut();
     } 
-    else if(isset($_POST["email"]) && isset($_POST["pass"])){
-            $email = $_POST["email"];
-            $pass = $_POST["pass"];
+    else if(isset($_POST["adminEmail"]) && isset($_POST["adminPass"])){
+            $email = $_POST["adminEmail"];
+            $pass = $_POST["adminPass"];
             authUser($email,$pass);
         }
         
