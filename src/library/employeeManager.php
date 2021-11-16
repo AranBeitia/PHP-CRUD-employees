@@ -8,29 +8,35 @@
 
 function addEmployee(array $newEmployee) {
 	$employeeArray = json_decode(file_get_contents("../../resources/employees.json"), true);
-	$newArray = array();
-	$id = Array();
+	// $newArray = array();
+	// $id = Array();
 
 	foreach($employeeArray as $employee) {
-		$id[] = $employee["id"];
+		if($employee['email'] === $newEmployee['email']) {
+			return false;
+		}
 	}
-echo $id;
-	$newId = max($id) + 1;
-	$newArray = array(
-		"id" => $newEmployee[$newId],
-		"name" => $newEmployee["name"],
-		"email" => $newEmployee["email"],
-		"age" => $newEmployee["age"],
-		"streetAddress" => $newEmployee["streetAddress"],
-		"city" => $newEmployee["city"],
-		"state" => $newEmployee["state"],
-		"postalCode" => $newEmployee["postalCode"],
-		"phoneNumber" => $newEmployee["phoneNumber"],
-	);
+	$newEmployee["id"] = getNextIdentifier($employeeArray);
 
-	array_push($employeeArray, $newArray);
+	// echo $newEmployee["id"]
+	// $newId = max($id) + 1;
 
-	file_put_contents("../../resources/employees.json", json_encode($employeeArray));
+	$employeeArray[] = $newEmployee;
+	// $newArray = array(
+	// 	"id" => $newEmployee[$newId],
+	// 	"name" => $newEmployee["name"],
+	// 	"email" => $newEmployee["email"],
+	// 	"age" => $newEmployee["age"],
+	// 	"streetAddress" => $newEmployee["streetAddress"],
+	// 	"city" => $newEmployee["city"],
+	// 	"state" => $newEmployee["state"],
+	// 	"postalCode" => $newEmployee["postalCode"],
+	// 	"phoneNumber" => $newEmployee["phoneNumber"],
+	// );
+
+	// array_push($employeeArray, $newArray);
+
+	file_put_contents("../../resources/employees.json", json_encode($employeeArray, JSON_PRETTY_PRINT));
 // TODO implement it
 }
 
@@ -76,9 +82,12 @@ function getQueryStringParameters(): array
 // TODO implement it
 }
 
-function getNextIdentifier(array $employeesCollection): int
+function getNextIdentifier(array $employeesCollection)
 {
+	if(isset($employeesCollection["id"])) {
 
+		echo $employeesCollection["id"];
+	}
 // TODO implement it
 }
 
